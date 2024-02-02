@@ -45,13 +45,14 @@
                                     <form class="user" method="post">
                                         <div class="form-group">
                                             <label asp-for="UserName" class="form-label">UserName</label>
-                                            <input asp-for="UserName" class="form-control form-control-user" placeholder="Enter Email UserName...">
+                                            <input asp-for="UserName" class="form-control form-control-user" placeholder="Enter UserName...">
                                             <span asp-validation-for="UserName" class="text-danger"></span>
                                         </div>
                                         <div class="form-group">
                                             <label asp-for="Password" class="form-label">Password</label>
-                                            <input asp-for="Password" type="password" class="form-control form-control-user" placeholder="Enter Email Password...">
+                                            <input asp-for="Password" type="password" class="form-control form-control-user" placeholder="Enter Password...">
                                             <span asp-validation-for="Password" class="text-danger"></span>
+                                           
                                         </div>
 
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
