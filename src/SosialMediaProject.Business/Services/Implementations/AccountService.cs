@@ -47,5 +47,48 @@ namespace SosialMediaProject.Business.Services.Implementations
         {
             await _signInManager.SignOutAsync();
         }
-    }
+
+		public async Task Register(RegisterViewModel registerViewModel)
+		{
+			AppUser user = null;
+
+			user = await _userManager.FindByNameAsync(registerViewModel.UserName);
+			if (user is not null)
+			{
+				throw new InvalidRegisterException("Username", "Username already exist!");
+				
+			}
+			user = await _userManager.FindByEmailAsync(registerViewModel.Email);
+
+			if (user is not null)
+			{
+				throw new InvalidRegisterException("Email", "Email already exist!");
+				
+			}
+			AppUser appUser = new AppUser
+			{
+				FullName=registerViewModel.FullName,
+				UserName = registerViewModel.UserName,
+				Gender=registerViewModel.Gender,	
+				PhoneNumber=registerViewModel.Phone,
+				Email = registerViewModel.Email,
+				Birthdate = registerViewModel.Birthdate
+
+			};
+			var result = await _userManager.CreateAsync(appUser, registerViewModel.Password);
+
+			if (result.Succeeded)
+			{
+				foreach (var error in result.Errors)
+				{
+					throw new InvalidRegisterException("", error.Description);
+					
+				}
+			}
+			await _userManager.AddToRoleAsync(appUser, "Member");
+			await _signInManager.SignInAsync(appUser, isPersistent: false);
+
+			
+		}
+	}
 }

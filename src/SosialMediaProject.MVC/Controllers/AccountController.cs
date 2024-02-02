@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SosialMediaProject.Business.Exceptions;
 using SosialMediaProject.Business.Services.Interfaces;
 using SosialMediaProject.Business.ViewModels;
 using SosialMediaProject.Core.Models;
@@ -55,6 +56,31 @@ namespace SosialMediaProject.MVC.Controllers
 
             return RedirectToAction("login", "account");
         }
-
-    }
+		[HttpGet]
+		public IActionResult Register()
+		{
+			return View();
+		}
+		[ValidateAntiForgeryToken]
+		[HttpPost]
+		public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
+		{
+			if (!ModelState.IsValid) return View(registerViewModel);
+			try
+			{
+				await _accountService.Register(registerViewModel);
+			}
+			catch (InvalidRegisterException ex)
+			{
+				ModelState.AddModelError("", ex.Message);
+				return View(registerViewModel);
+			}
+			catch (Exception ex)
+			{
+				ModelState.AddModelError("", ex.Message);
+				return View(registerViewModel);
+			}
+			return RedirectToAction("index", "home");
+		}
+	}
 }

@@ -10,5 +10,6 @@ namespace SosialMediaProject.Business.ViewModels
         [StringLength(maximumLength: 50, MinimumLength = 8)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+        
     }
 }

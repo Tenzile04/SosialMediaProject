@@ -6,5 +6,6 @@ namespace SosialMediaProject.Business.Services.Interfaces
     {
         Task Login(LoginViewModel loginViewModel);
         Task Logout();
+        Task Register(RegisterViewModel registerViewModel);
     }
 }

@@ -279,10 +279,39 @@ namespace SosialMediaProject.Data.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Birthdate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("LastLoginDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PhotoUrl")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("RegisteredDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Visibility")
+                        .HasColumnType("bit");
 
                     b.HasDiscriminator().HasValue("AppUser");
                 });
@@ -341,10 +370,15 @@ namespace SosialMediaProject.Data.Migrations
             modelBuilder.Entity("SosialMediaProject.Core.Models.Post", b =>
                 {
                     b.HasOne("SosialMediaProject.Core.Models.AppUser", "AppUser")
-                        .WithMany()
+                        .WithMany("Post")
                         .HasForeignKey("AppUserId1");
 
                     b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("SosialMediaProject.Core.Models.AppUser", b =>
+                {
+                    b.Navigation("Post");
                 });
 #pragma warning restore 612, 618
         }
