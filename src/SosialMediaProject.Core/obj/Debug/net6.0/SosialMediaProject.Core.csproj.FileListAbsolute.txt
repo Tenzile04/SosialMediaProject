@@ -21,6 +21,7 @@ C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Core\obj
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Core\obj\Debug\net6.0\SosialMediaProject.Core.AssemblyInfoInputs.cache
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Core\obj\Debug\net6.0\SosialMediaProject.Core.AssemblyInfo.cs
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Core\obj\Debug\net6.0\SosialMediaProject.Core.csproj.CoreCompileInputs.cache
+C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Core\obj\Debug\net6.0\SosialMediaProject.Core.sourcelink.json
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Core\obj\Debug\net6.0\SosialMediaProject.Core.dll
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Core\obj\Debug\net6.0\refint\SosialMediaProject.Core.dll
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Core\obj\Debug\net6.0\SosialMediaProject.Core.pdb

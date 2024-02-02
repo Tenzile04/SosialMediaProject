@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SosialMediaProject.Core.Models
 {
-	public class Post:BaseEntity
+    public class Post:BaseEntity
 	{
 		[Required]
-		public string Context { get; set; }
+        [StringLength(maximumLength: 500,MinimumLength =2)]
+        public string Context { get; set; }
 
 		[StringLength(maximumLength: 100)]
 		public string? ImageUrl { get; set; }

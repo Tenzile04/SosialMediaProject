@@ -27,6 +27,7 @@ C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.AssemblyInfoInputs.cache
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.AssemblyInfo.cs
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.csproj.CoreCompileInputs.cache
+C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.sourcelink.json
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.csproj.CopyComplete
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.dll
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\refint\SosialMediaProject.Business.dll

@@ -242,7 +242,8 @@ namespace SosialMediaProject.Data.Migrations
 
                     b.Property<string>("Context")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
