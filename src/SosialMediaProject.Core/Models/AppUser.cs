@@ -16,7 +16,7 @@ namespace SosialMediaProject.Core.Models
 		public string Gender { get; set; }
 		[Required]
 		[StringLength(maximumLength: 100), MinLength(3)]
-		public string Address { get; set; }
+		public string? Address { get; set; }
 
 		[StringLength(maximumLength: 100)]
 		public string? PhotoUrl { get; set; }

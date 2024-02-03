@@ -10,7 +10,7 @@ namespace SosialMediaProject.Business
         {
           
             services.AddScoped<IAccountService, AccountService>();
-            
-        }
+			services.AddScoped<IPostService, PostService>();
+		}
     }
 }

@@ -1,0 +1,19 @@
+﻿@model Post
+<div class="container-fluid">
+	<form method="post" enctype="multipart/form-data">
+
+		<div class="card" style="width: 18rem;">
+			<img src="~/uploads/posts/@Model.ImageUrl" class="card-img-top">
+			<div class="card-body">
+				<h5 class="card-title">@Model.Context</h5>
+			</div>
+
+			<div class="card-body">
+				<button type="submit" class="card-link btn btn-danger">Delete</button>
+				<a asp-action="index" asp-controller="post" class="card-link btn btn-primary">Go to back</a>
+			</div>
+		</div>
+
+
+	</form>
+</div>

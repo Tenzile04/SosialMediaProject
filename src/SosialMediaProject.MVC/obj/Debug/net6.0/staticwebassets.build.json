@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GxJMGKnzC016AVkDkNU7E+kdCsintx5e7w2TZ8ikM38=",
+  "Hash": "9G8y7ADcuZebiZfMZMyHFTvigFSNfcRlZ1q6PsM2Ggk=",
   "Source": "SosialMediaProject.MVC",
   "BasePath": "_content/SosialMediaProject.MVC",
   "Mode": "Default",
@@ -38832,6 +38832,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\manage\\vendor\\jquery-easing\\jquery.easing.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\4ef219e5-7080-409e-abab-d82260e6be59video-feed.mp4",
+      "SourceId": "SosialMediaProject.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\",
+      "BasePath": "_content/SosialMediaProject.MVC",
+      "RelativePath": "uploads/posts/4ef219e5-7080-409e-abab-d82260e6be59video-feed.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\posts\\4ef219e5-7080-409e-abab-d82260e6be59video-feed.mp4"
     }
   ]
 }

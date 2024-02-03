@@ -4,6 +4,7 @@ using SosialMediaProject.Business;
 using SosialMediaProject.Core.Models;
 using SosialMediaProject.Data;
 using SosialMediaProject.Data.DataAccessLayer;
+using SosialMediaProject.MVC.ViewService;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRepository();
 builder.Services.AddService();
+builder.Services.AddScoped<LayoutService>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {

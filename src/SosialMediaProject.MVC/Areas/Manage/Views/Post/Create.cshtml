@@ -1,0 +1,27 @@
+﻿@model Post
+<div class="container-fluid">
+	<h1>Create</h1>
+	<form method="post" enctype="multipart/form-data">
+		<div class="mb-3">
+			<label for="" class="form-label">Context</label>
+			<input asp-for="Context" class="form-control" placeholder="Context">
+			<span asp-validation-for="Context" style="color:red"></span>
+		</div>
+		<div class="mb-3">
+			<label for="" class="form-label">Status</label>
+			<input asp-for="Status" class="form-control" placeholder="Status">
+			<span asp-validation-for="Status" style="color:red"></span>
+		</div>
+		<div class="mb-3">
+			<label for="" class="form-label">Image</label>
+			<input asp-for="Image" class="form-control" placeholder="Image">
+			<span asp-validation-for="Image" style="color:red"></span>
+		</div>
+		<div class="mb-3">
+			<label for="" class="form-label">Video</label>
+			<input asp-for="Video" class="form-control" placeholder="Video">
+			<span asp-validation-for="Video" style="color:red"></span>
+		</div>
+		<button type="submit" class="btn btn-primary">Create</button>
+	</form>
+</div>

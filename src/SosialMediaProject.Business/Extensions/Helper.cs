@@ -20,9 +20,9 @@ namespace SosialMediaProject.Business.Extensions
 			}
 			return fileName;
 		}
-		public static void DeleteFile(string rootPath, string folderName, string imageUrl)
+		public static void DeleteFile(string rootPath, string folderName, string fileUrl)
 		{
-			string deletePath = Path.Combine(rootPath, folderName, imageUrl);
+			string deletePath = Path.Combine(rootPath, folderName, fileUrl);
 			if (File.Exists(deletePath))
 			{
 				File.Delete(deletePath);

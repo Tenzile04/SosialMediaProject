@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using SosialMediaProject.Core.Repositories.Interfaces;
+using SosialMediaProject.Data.Repositories.Implementations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,7 @@ namespace SosialMediaProject.Data
 	{
 		public static void AddRepository(this IServiceCollection services)
 		{
-
+			services.AddScoped<IPostRepository, PostRepository>();
 		}
 	}
 }
