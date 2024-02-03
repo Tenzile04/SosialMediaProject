@@ -469,19 +469,35 @@
 							</div>
 							<!-- Form START -->
 							<form class="mt-4" method="post">
+								<div class="col-md-12 d-flex flex-row gap-3">
+									<div class="mb-3 col-6 input-group-lg">
+										<label asp-for="FullName" class="form-label">FullName</label>
+										<input class="form-control" asp-for="FullName" placeholder="Enter FullName...">
+										<span asp-validation-for="FullName" class="text-danger"></span>
 
-								<div class=" input-group-lg">
-									<label asp-for="FullName" class="form-label">FullName</label>
-									<input class="form-control" asp-for="FullName" placeholder="Enter FullName...">
-									<span asp-validation-for="FullName" class="text-danger"></span>
+									</div>
+									<div class="mb-3 col-6 input-group-lg">
+										<label asp-for="UserName" class="form-label">UserName</label>
+										<input class="form-control" asp-for="UserName" placeholder="Enter UserName...">
+										<span asp-validation-for="UserName" class="text-danger"></span>
 
+									</div>
 								</div>
-								<div class="input-group-lg">
-									<label asp-for="UserName" class="form-label">UserName</label>
-									<input class="form-control" asp-for="UserName" placeholder="Enter UserName...">
-									<span asp-validation-for="UserName" class="text-danger"></span>
+								<div class="col-md-12 d-flex flex-row gap-3">
+									<div class="mb-3 input-group-lg">
+										<label asp-for="Birthdate" class="form-label">Birthdate</label>
+										<input type="date" class="form-control" asp-for="Birthdate" placeholder="Enter Birthdate...">
+										<span asp-validation-for="Birthdate" class="text-danger"></span>
 
+									</div>
+									<div class="mb-3 input-group-lg">
+										<label asp-for="Phone" class="form-label">Phone</label>
+										<input class="form-control" asp-for="Phone" placeholder="Enter Phone...">
+										<span asp-validation-for="Phone" class="text-danger"></span>
+
+									</div>
 								</div>
+								
 								<div class="mb-3 input-group-lg">
 									<label asp-for="Gender" class="form-label">Gender</label>
 									<input type="radio" name="gender" value="male">Male
@@ -489,19 +505,6 @@
 									<span asp-validation-for="Gender" class="text-danger"></span>
 
 								</div>
-								<div class="mb-3 input-group-lg">
-									<label asp-for="Birthdate" class="form-label">Birthdate</label>
-									<input class="form-control" asp-for="Birthdate" placeholder="Enter Birthdate...">
-									<span asp-validation-for="Birthdate" class="text-danger"></span>
-
-								</div>
-								<div class="mb-3 input-group-lg">
-									<label asp-for="Phone" class="form-label">Phone</label>
-									<input class="form-control" asp-for="Phone" placeholder="Enter Phone...">
-									<span asp-validation-for="Phone" class="text-danger"></span>
-
-								</div>
-
 								<!-- Email -->
 								<div class="mb-3 input-group-lg">
 									<label asp-for="Email" class="form-label">Email</label>

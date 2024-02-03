@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SosialMediaProject.Business;
+using SosialMediaProject.Business.Hubs;
 using SosialMediaProject.Core.Models;
 using SosialMediaProject.Data;
 using SosialMediaProject.Data.DataAccessLayer;
@@ -13,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRepository();
 builder.Services.AddService();
 builder.Services.AddScoped<LayoutService>();
+builder.Services.AddSignalR();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
@@ -50,5 +52,5 @@ app.MapControllerRoute(
 app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapHub<ChatHub>("/chatUrl");
 app.Run();

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SosialMediaProject.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67729658e72f5264c733d1552e5357a1c39b3bee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f48cfedc19cacce733be40e7d93d316fdaa4059")]
 [assembly: System.Reflection.AssemblyProductAttribute("SosialMediaProject.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SosialMediaProject.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

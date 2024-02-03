@@ -338,3 +338,4 @@ C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.MVC\obj\
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.MVC\obj\Debug\net6.0\SosialMediaProject.MVC.pdb
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.MVC\obj\Debug\net6.0\SosialMediaProject.MVC.genruntimeconfig.cache
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.MVC\obj\Debug\net6.0\ref\SosialMediaProject.MVC.dll
+C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.MVC\bin\Debug\net6.0\libman.json
