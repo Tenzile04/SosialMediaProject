@@ -427,9 +427,17 @@
 
         <!-- Page level custom scripts -->
         <script src="~/manage/js/demo/chart-area-demo.js"></script>
-        <script src="~/manage/js/demo/chart-pie-demo.js"></script>
 
-       
+		
+        <script src="~/manage/js/demo/chart-pie-demo.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.25/signalr.min.js" integrity="sha512-hJP90Q+3UdSvwBhVIze6qNNDZ+tEbuTv+HBAtoC0tpRrZ0r48hbcUmTdtumkC7m0z16bqNu4pSytecT3/js+VQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            var connection = new signalR.HubConnectionBuilder().withUrl("/chatUrl").build();
+            connection.start();
+
+            console.log(connection);
+        </script>
+        @RenderSection("Scripts",required:false)
  
 </body>
 

@@ -29,6 +29,9 @@ namespace SosialMediaProject.Core.Models
 		public DateTime RegisteredDate { get; set; }
 		public DateTime LastLoginDate { get; set; }
 		public List<Post>? Post {  get; set; }
+		public string? ConnectionId { get; set; }
+		
+
 
 	}
 }

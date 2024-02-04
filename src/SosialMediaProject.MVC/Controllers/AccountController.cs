@@ -82,5 +82,17 @@ namespace SosialMediaProject.MVC.Controllers
 			}
 			return RedirectToAction("index", "home");
 		}
+		public async Task<IActionResult> Profile()
+		{
+			AppUser appUser = null;
+
+			if (HttpContext.User.Identity.IsAuthenticated)
+			{
+				appUser = await _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+			}
+
+		
+			return View(appUser);
+		}
 	}
 }

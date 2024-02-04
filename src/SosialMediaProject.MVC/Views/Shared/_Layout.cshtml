@@ -153,6 +153,7 @@
 				</div>
 				<!-- Main navbar END -->
 				<!-- Nav right START -->
+		
 				<ul class="nav flex-nowrap align-items-center ms-sm-3 list-unstyled">
 					<li class="nav-item ms-2">
 						<a class="nav-link bg-light icon-md btn btn-light p-0" href="messaging.html">
@@ -1154,9 +1155,14 @@
 
 	<!-- Theme Functions -->
 	<script src="~/assets/js/functions.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.25/signalr.min.js" integrity="sha512-hJP90Q+3UdSvwBhVIze6qNNDZ+tEbuTv+HBAtoC0tpRrZ0r48hbcUmTdtumkC7m0z16bqNu4pSytecT3/js+VQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		var connection = new signalR.HubConnectionBuilder().withUrl("/chatUrl").build();
+		connection.start();
 
-
-
+		console.log(connection);
+	</script>
+	@RenderSection("Scripts", required: false)
 </body>
 
 <!-- Mirrored from social.webestica.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Feb 2024 18:37:21 GMT -->

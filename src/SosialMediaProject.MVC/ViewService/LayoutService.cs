@@ -19,22 +19,10 @@ namespace SosialMediaProject.MVC.ViewService
 		public async Task<AppUser> GetAppUser()
 		{
 			AppUser user = null;
-			//string userName = null;
-			//if (_httpContextAccessor.HttpContext.User.Identity != null && _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
-			//{
-			//    userName = _httpContextAccessor.HttpContext.User.Identity.Name;
-			//}
-
-			//if (userName != null)
-			//{
-			//    user = await _userManager.FindByNameAsync(userName);
-			//}
-
-			//string userName = null;
 			if (_httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
 			{
-				user = await _userManager.FindByNameAsync(_httpContextAccessor.HttpContext.User.Identity.Name);
-				//user = await _context.Users.FirstOrDefaultAsync(x => x.UserName == _httpContextAccessor.HttpContext.User.Identity.Name);
+				string username = _httpContextAccessor.HttpContext.User.Identity.Name;
+				user = await _userManager.FindByNameAsync(username);
 			}
 
 			return user;
