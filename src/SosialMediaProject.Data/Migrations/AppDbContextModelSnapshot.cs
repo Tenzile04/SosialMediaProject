@@ -234,10 +234,7 @@ namespace SosialMediaProject.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AppUserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AppUserId1")
+                    b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Context")
@@ -270,7 +267,7 @@ namespace SosialMediaProject.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AppUserId1");
+                    b.HasIndex("AppUserId");
 
                     b.ToTable("Posts");
                 });
@@ -374,7 +371,7 @@ namespace SosialMediaProject.Data.Migrations
                 {
                     b.HasOne("SosialMediaProject.Core.Models.AppUser", "AppUser")
                         .WithMany("Post")
-                        .HasForeignKey("AppUserId1");
+                        .HasForeignKey("AppUserId");
 
                     b.Navigation("AppUser");
                 });

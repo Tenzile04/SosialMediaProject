@@ -21,7 +21,7 @@ namespace SosialMediaProject.Core.Models
 		public IFormFile Video { get; set; }
 		[Required]
 		public bool Status { get; set; }
-		public int AppUserId { get; set; }
+		public string? AppUserId { get; set; }
 		public AppUser? AppUser { get; set; }
 		
 	}
