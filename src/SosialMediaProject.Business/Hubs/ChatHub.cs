@@ -5,6 +5,7 @@ using SosialMediaProject.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,14 +32,23 @@ namespace SosialMediaProject.Business.Hubs
 
                 if (fromUser != null)
                 {
-                    await Clients.Client(fromUser.ConnectionId).SendAsync("ReceiveMessage", fromUser.FullName, message);
+                    AppUser user = _userManager.FindByIdAsync(toUserId).Result;
+					if (user != null)
+					{
+						if (user.ConnectionId != null && fromUser.ConnectionId != null)
+						{
+							await Clients.Client(user.ConnectionId).SendAsync("recievePrivateMessage", fromUser.Id, fromUser.FullName, message);
+							await Clients.Client(fromUser.ConnectionId).SendAsync("sendPrivMessage", user.Id, user.FullName, message);
+						}
+					}				
                    
                 }
             }
                
         }
+	
 
-        public override async Task OnConnectedAsync()
+		public override async Task OnConnectedAsync()
         {
             if (Context.User.Identity.IsAuthenticated)
             {
