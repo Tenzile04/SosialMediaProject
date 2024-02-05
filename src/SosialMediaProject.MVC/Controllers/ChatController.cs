@@ -19,5 +19,8 @@ namespace SosialMediaProject.MVC.Controllers
             var users = await _userManager.Users.ToListAsync();
             return View(users);
         }
-    }
+
+
+    } 
+
 }

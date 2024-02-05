@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SignalR;
 using SosialMediaProject.Core.Models;
 using System;
@@ -9,18 +10,34 @@ using System.Threading.Tasks;
 
 namespace SosialMediaProject.Business.Hubs
 {
-    public class ChatHub:Hub
+    public class ChatHub : Hub
     {
-        private readonly UserManager<AppUser> _userManager;
+        private readonly UserManager<AppUser> _userManager;     
 
         public ChatHub(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
         }
-        public async Task SendMessage(string user, string message)
+
+        //public async Task SendMessage(string user, string message)
+        //{
+        //    await Clients.All.SendAsync("ReceiveMessage", user, message);
+        //}
+        public async Task SendMessage(string toUserId, string message)
         {
-            await Clients.All.SendAsync("ReceiveMessage", user, message);
+            if (Context.User.Identity.IsAuthenticated)
+            {
+                var fromUser = await _userManager.FindByNameAsync(Context.User.Identity.Name);
+
+                if (fromUser != null)
+                {
+                    await Clients.Client(fromUser.ConnectionId).SendAsync("ReceiveMessage", fromUser.FullName, message);
+                   
+                }
+            }
+               
         }
+
         public override async Task OnConnectedAsync()
         {
             if (Context.User.Identity.IsAuthenticated)
@@ -35,6 +52,7 @@ namespace SosialMediaProject.Business.Hubs
             }
         }
 
+
         public override async Task OnDisconnectedAsync(Exception? exception)
         {
             if (Context.User.Identity.IsAuthenticated)
@@ -48,5 +66,9 @@ namespace SosialMediaProject.Business.Hubs
                 }
             }
         }
+
+
+
+
     }
 }
