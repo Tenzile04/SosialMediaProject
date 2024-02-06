@@ -19,8 +19,8 @@ namespace SosialMediaProject.Core.Models
 		public string? VideoUrl {  get; set; }
 		[NotMapped]
 		public IFormFile Video { get; set; }
-		[Required]
-		public bool Status { get; set; }
+		
+		public bool Status=true; 
 		public string? AppUserId { get; set; }
 		public AppUser? AppUser { get; set; }
 		

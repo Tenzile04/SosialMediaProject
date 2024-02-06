@@ -166,7 +166,7 @@
 
 																</div>
 																<div class="flex-grow-1 d-block">
-																	<h6 class="mb-0 mt-1">@item.FullName</h6>
+																	<h6 class="fullname mb-0 mt-1">@item.FullName</h6>
 
 																</div>
 															</div>
@@ -212,7 +212,7 @@
 
 												</div>
 												<div class="d-block flex-grow-1">
-													<h6 id="@item.Id" class="mb-0 mt-1">@item.FullName</h6>
+													<h6 id="@item.Id" class=" mb-0 mt-1">@item.FullName</h6>
 
 													<div class="small text-secondary"><i class="fa-solid fa-circle text-@(item.ConnectionId !=null ? "success" : "danger" ) me-1"></i>@(item.ConnectionId != null ? "Online" : "OffLine")</div>
 													
@@ -349,7 +349,40 @@
 
 	<!-- Theme Functions -->
 	<script src="~/assets/js/functions.js"></script>
+	@section Scripts{
+		<script>
+			
+			fetch('/getUsers')
+				.then(response => response.json())
+				.then(users => {
+					
+					users.forEach(function (user) {
+						var usernameElement = document.getElementById(userId);
+						usernameElement.onclick = function () {
 
+							let fullnames = document.querySelectorAll(".fullname");
+							fullnames.forEach(fullname => {
+								fullname.getAttribute(userId)
+							})
+						};
+					});
+				});
+
+
+			connection.on("OnConnect", function (userId) {
+				document.getElementById(userId).classList.remove("bg-danger");
+				document.getElementById(userId).classList.add("bg-success");
+			})
+
+
+			connection.on("DisConnect", function (userId) {
+				document.getElementById(userId).classList.remove("bg-success");
+				document.getElementById(userId).classList.add("bg-danger");
+			})
+
+		</script>
+
+	}
 </body>
 
 <!-- Mirrored from social.webestica.com/messaging.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Feb 2024 18:37:42 GMT -->

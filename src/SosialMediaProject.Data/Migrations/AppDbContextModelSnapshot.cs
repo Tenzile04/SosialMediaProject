@@ -255,9 +255,6 @@ namespace SosialMediaProject.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
@@ -306,9 +303,6 @@ namespace SosialMediaProject.Data.Migrations
 
                     b.Property<DateTime>("RegisteredDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("Visibility")
                         .HasColumnType("bit");

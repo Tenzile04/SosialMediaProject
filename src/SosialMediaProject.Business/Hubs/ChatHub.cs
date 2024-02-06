@@ -32,13 +32,14 @@ namespace SosialMediaProject.Business.Hubs
 
                 if (fromUser != null)
                 {
-                    AppUser user = _userManager.FindByIdAsync(toUserId).Result;
-					if (user != null)
+                    AppUser toUser = _userManager.FindByIdAsync(toUserId).Result;
+
+					if (toUser != null)
 					{
-						if (user.ConnectionId != null && fromUser.ConnectionId != null)
+						if (toUser.ConnectionId != null && fromUser.ConnectionId != null)
 						{
-							await Clients.Client(user.ConnectionId).SendAsync("recievePrivateMessage", fromUser.Id, fromUser.FullName, message);
-							await Clients.Client(fromUser.ConnectionId).SendAsync("sendPrivMessage", user.Id, user.FullName, message);
+							await Clients.Client(toUser.ConnectionId).SendAsync("RecieveMessagePrivate", fromUser.Id, fromUser.FullName, message);
+							await Clients.Client(fromUser.ConnectionId).SendAsync("SendMessagePrivate", toUser.Id, toUser.FullName, message);
 						}
 					}				
                    

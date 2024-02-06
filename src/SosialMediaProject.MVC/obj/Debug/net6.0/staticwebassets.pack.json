@@ -8169,12 +8169,24 @@
       "PackagePath": "staticwebassets\\manage\\vendor\\jquery\\jquery.slim.min.map"
     },
     {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\01443cfd-5ce4-4381-a34e-55464fdd49bcposter.jpg",
+      "PackagePath": "staticwebassets\\uploads\\posts\\01443cfd-5ce4-4381-a34e-55464fdd49bcposter.jpg"
+    },
+    {
       "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\2b4d81b9-6529-4564-9f12-d21748232cae01.jpg",
       "PackagePath": "staticwebassets\\uploads\\posts\\2b4d81b9-6529-4564-9f12-d21748232cae01.jpg"
     },
     {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\2d5ea51e-4601-4f0d-8ead-50a2c72feaaaposter.jpg",
+      "PackagePath": "staticwebassets\\uploads\\posts\\2d5ea51e-4601-4f0d-8ead-50a2c72feaaaposter.jpg"
+    },
+    {
       "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\86d832ab-0c7f-4228-a487-2255dcde7080video-feed.mp4",
       "PackagePath": "staticwebassets\\uploads\\posts\\86d832ab-0c7f-4228-a487-2255dcde7080video-feed.mp4"
+    },
+    {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\af37eb5b-89fb-4a96-9df6-6c03e604c14dposter.jpg",
+      "PackagePath": "staticwebassets\\uploads\\posts\\af37eb5b-89fb-4a96-9df6-6c03e604c14dposter.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.SosialMediaProject.MVC.Microsoft.AspNetCore.StaticWebAssets.props",

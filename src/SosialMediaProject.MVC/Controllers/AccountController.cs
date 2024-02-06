@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SosialMediaProject.Business.Exceptions;
 using SosialMediaProject.Business.Services.Interfaces;
 using SosialMediaProject.Business.ViewModels;
 using SosialMediaProject.Core.Models;
+using SosialMediaProject.Data.DataAccessLayer;
 using System.Security.Authentication;
 
 namespace SosialMediaProject.MVC.Controllers
@@ -12,11 +14,13 @@ namespace SosialMediaProject.MVC.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IAccountService _accountService;
-        public AccountController(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager, IAccountService accountService)
+        private readonly AppDbContext _context;
+        public AccountController(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager, IAccountService accountService,AppDbContext context)
         {
            
             _userManager = userManager;
             _accountService = accountService;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -90,9 +94,11 @@ namespace SosialMediaProject.MVC.Controllers
 			{
 				appUser = await _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
 			}
+			
 
-		
 			return View(appUser);
+
+			
 		}
 	}
 }

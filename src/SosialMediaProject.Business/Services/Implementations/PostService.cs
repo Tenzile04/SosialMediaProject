@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using SosialMediaProject.Business.Exceptions;
 using SosialMediaProject.Business.Extensions;
 using SosialMediaProject.Business.Services.Interfaces;
@@ -10,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,11 +23,14 @@ namespace SosialMediaProject.Business.Services.Implementations
 	{
 		private readonly IPostRepository _postRepository;
 		private readonly IWebHostEnvironment _env;
-
-		public PostService(IPostRepository postRepository, IWebHostEnvironment env)
+		private readonly UserManager<AppUser> _userManager;
+		private readonly IHttpContextAccessor _httpContextAccessor;
+		public PostService(IPostRepository postRepository, IWebHostEnvironment env,UserManager<AppUser> userManager,IHttpContextAccessor httpContextAccessor)
 		{
+			_userManager = userManager;
 			_postRepository = postRepository;
 			_env = env;
+			_httpContextAccessor = httpContextAccessor;
 		}
 		public async Task<List<Post>> GetAll(Expression<Func<Post, bool>>? expression = null, params string[]? includes)
 		{
@@ -37,6 +44,14 @@ namespace SosialMediaProject.Business.Services.Implementations
 		public async Task Create(Post post)
 		{
 			if (post is null) throw new InvalidNotFoundException();
+			AppUser appUser = null;			
+
+			if (_httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+			{				
+				post.AppUserId = appUser.Id;
+				post.Status = true;
+			}			
+		
 			if (post.Image != null)
 			{
 				if (post.Image.ContentType != "image/jpeg" && post.Image.ContentType != "image/png")
@@ -77,6 +92,7 @@ namespace SosialMediaProject.Business.Services.Implementations
 		public async Task Delete(int id)
 		{
 			if (id == null) throw new InvalidNotFoundException();
+			
 			var existPost = await _postRepository.GetByIdAsync(x => x.Id == id);
 			if (existPost == null) throw new InvalidNotFoundException();
 			Helper.DeleteFile(_env.WebRootPath, "uploads/posts", existPost.ImageUrl);
@@ -98,6 +114,7 @@ namespace SosialMediaProject.Business.Services.Implementations
 		public async Task Update(Post post)
 		{
 			if (post == null) throw new InvalidNotFoundException();
+
 			var existPost = await _postRepository.GetByIdAsync(x => x.Id == post.Id);
 			if (existPost == null) throw new InvalidNotFoundException();
 			if (post.Image != null)
@@ -134,7 +151,7 @@ namespace SosialMediaProject.Business.Services.Implementations
 			{
 				throw new InvalidVideoException("Video", "Video is required");
 			}
-
+			
 			existPost.Context = post.Context;
 			existPost.Status = post.Status;
 			existPost.UpdatedDate = DateTime.UtcNow.AddHours(4);
