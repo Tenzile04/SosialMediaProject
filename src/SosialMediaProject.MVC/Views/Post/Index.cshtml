@@ -1,5 +1,4 @@
-﻿
-@model List<Post>
+﻿@model List<Post>
 @{
     int count = 0;
 }
@@ -14,8 +13,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Context</th>
                 <th scope="col">Status</th>
-                <th scope="col">Image</th>
-                <th scope="col">Video</th>
+                <th scope="col">FormFile</th>
+               
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -29,11 +28,9 @@
                     <td>@item.Context</td>
                     <td>@item.Status</td>
                     <td>
-                        <img style="max-width:100px" src="~/uploads/posts/@item.ImageUrl" />
+                        <img style="max-width:100px" src="~/uploads/posts/@item.FormUrl" />
                     </td>
-                    <td>
-                        <video style="max-width:100px" src="~/uploads/posts/@item.VideoUrl" />
-                    </td>
+                   
                     <td>
                         <a asp-action="update" asp-controller="post" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
                         <a asp-action="delete" asp-controller="post" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>

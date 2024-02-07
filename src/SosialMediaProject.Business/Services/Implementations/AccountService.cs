@@ -35,7 +35,7 @@ namespace SosialMediaProject.Business.Services.Implementations
 
             }
             var result = await _signInManager.PasswordSignInAsync(admin, loginViewModel.Password, false, false);
-
+			
             if (!result.Succeeded)
             {
                 throw new InvalidCredentionalException("", "UserName or Password is incorrect");
@@ -67,13 +67,13 @@ namespace SosialMediaProject.Business.Services.Implementations
 			}
 			AppUser appUser = new AppUser
 			{
-				FullName=registerViewModel.FullName,
+				FullName = registerViewModel.FullName,
 				UserName = registerViewModel.UserName,
-				Gender=registerViewModel.Gender,	
-				PhoneNumber=registerViewModel.Phone,
+				Gender = registerViewModel.Gender,
+				PhoneNumber = registerViewModel.Phone,
 				Email = registerViewModel.Email,
-				Birthdate = registerViewModel.Birthdate
-
+				Birthdate = registerViewModel.Birthdate,
+				RegisteredDate = DateTime.UtcNow.AddHours(4)
 			};
 			var result = await _userManager.CreateAsync(appUser, registerViewModel.Password);
 

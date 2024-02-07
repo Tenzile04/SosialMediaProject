@@ -11,16 +11,11 @@ namespace SosialMediaProject.Core.Models
         public string Context { get; set; }
 
 		[StringLength(maximumLength: 100)]
-		public string? ImageUrl { get; set; }
+		public string? FormUrl {  get; set; }
 		[NotMapped]
-		public IFormFile Image { get; set; }
+		public IFormFile? FormFile { get; set; }
 
-		[StringLength(maximumLength: 100)]
-		public string? VideoUrl {  get; set; }
-		[NotMapped]
-		public IFormFile Video { get; set; }
-		
-		public bool Status=true; 
+		public bool Status { get; } = true;
 		public string? AppUserId { get; set; }
 		public AppUser? AppUser { get; set; }
 		

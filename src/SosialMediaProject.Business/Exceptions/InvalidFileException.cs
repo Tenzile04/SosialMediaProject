@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace SosialMediaProject.Business.Exceptions
 {
-	public class InvalidImageContentTypeException : Exception
+	public class InvalidFileException : Exception
 	{
 		public string PropertyName { get; set; }
-		public InvalidImageContentTypeException()
+		public InvalidFileException()
 		{
 
 		}
-		public InvalidImageContentTypeException(string message) : base(message)
+		public InvalidFileException(string message) : base(message)
 		{
 
 		}
-		public InvalidImageContentTypeException(string propertyName, string message) : base(message)
+		public InvalidFileException(string propertyName, string message) : base(message)
 		{
 			PropertyName = propertyName;
 		}

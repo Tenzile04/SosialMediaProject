@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace SosialMediaProject.Business.Exceptions
 {
-	public class InvalidVideoSizeException : Exception
+	public class InvalidFileSizeException : Exception
 	{
 		public string PropertyName { get; set; }
-		public InvalidVideoSizeException()
+		public InvalidFileSizeException()
 		{
 
 		}
-		public InvalidVideoSizeException(string message) : base(message)
+		public InvalidFileSizeException(string message) : base(message)
 		{
 
 		}
-		public InvalidVideoSizeException(string propertyName, string message) : base(message)
+		public InvalidFileSizeException(string propertyName, string message) : base(message)
 		{
 			PropertyName = propertyName;
 		}

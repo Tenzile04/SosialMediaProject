@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SosialMediaProject.Data.DataAccessLayer;
 using SosialMediaProject.MVC.ViewModels;
 using System.Diagnostics;
 
 namespace SosialMediaProject.MVC.Controllers
 {
+	[Authorize]
 	public class HomeController : Controller
 	{
 		private readonly AppDbContext _context;
@@ -12,6 +14,7 @@ namespace SosialMediaProject.MVC.Controllers
 		{
 			_context = context;
 		}
+		
 		public IActionResult Index()
 		{
 			HomeViewModel homeViewModel = new HomeViewModel()

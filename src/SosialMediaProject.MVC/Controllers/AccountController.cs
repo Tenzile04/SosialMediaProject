@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using SosialMediaProject.Business.Exceptions;
 using SosialMediaProject.Business.Services.Interfaces;
 using SosialMediaProject.Business.ViewModels;
@@ -94,9 +95,9 @@ namespace SosialMediaProject.MVC.Controllers
 			{
 				appUser = await _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
 			}
-			
+         
 
-			return View(appUser);
+            return View(appUser);
 
 			
 		}

@@ -248,7 +248,7 @@ namespace SosialMediaProject.Data.Migrations
                     b.Property<DateTime>("DeletedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ImageUrl")
+                    b.Property<string>("FormUrl")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -257,10 +257,6 @@ namespace SosialMediaProject.Data.Migrations
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("VideoUrl")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -294,18 +290,17 @@ namespace SosialMediaProject.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastLoginDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("PhotoUrl")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Profession")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("RegisteredDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool>("Visibility")
-                        .HasColumnType("bit");
 
                     b.HasDiscriminator().HasValue("AppUser");
                 });

@@ -14,7 +14,10 @@ namespace SosialMediaProject.Core.Models
 		public string Birthdate { get; set; }
 		[Required]
 		public string Gender { get; set; }
-		[Required]
+        [Required]
+        [StringLength(maximumLength: 100), MinLength(2)]
+        public string? Profession { get; set; }
+        [Required]
 		[StringLength(maximumLength: 100), MinLength(3)]
 		public string? Address { get; set; }
 
@@ -23,11 +26,11 @@ namespace SosialMediaProject.Core.Models
 		[NotMapped]
 		public IFormFile Photo { get; set; }
 		[Required]
-		public bool Visibility { get; set; }
-		
-		public bool Status = true;
-		public DateTime RegisteredDate { get; set; }
-		public DateTime LastLoginDate { get; set; }
+		public bool IsPublic { get; } = true;
+
+        public bool Status { get; } = true;
+        public DateTime RegisteredDate { get; set; }
+		//public DateTime LastLoginDate { get; set; }
 		public List<Post>? Post {  get; set; }
 		public string? ConnectionId { get; set; }
 		
