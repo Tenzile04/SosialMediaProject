@@ -62,12 +62,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tenzıle SSD/Desktop/SosialMediaProject/src/SosialMediaProject.MVC/Views/Post/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxDcmVhdGUuY3NodG1s
+[C:/Users/Tenzıle SSD/Desktop/SosialMediaProject/src/SosialMediaProject.MVC/Views/Post/CreateImage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxDcmVhdGVJbWFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Tenzıle SSD/Desktop/SosialMediaProject/src/SosialMediaProject.MVC/Views/Post/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxEZWxldGUuY3NodG1s
+[C:/Users/Tenzıle SSD/Desktop/SosialMediaProject/src/SosialMediaProject.MVC/Views/Post/CreateVideo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxDcmVhdGVWaWRlby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tenzıle SSD/Desktop/SosialMediaProject/src/SosialMediaProject.MVC/Views/Post/DeleteImage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxEZWxldGVJbWFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tenzıle SSD/Desktop/SosialMediaProject/src/SosialMediaProject.MVC/Views/Post/DeleteVideo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxEZWxldGVWaWRlby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Tenzıle SSD/Desktop/SosialMediaProject/src/SosialMediaProject.MVC/Views/Post/Index.cshtml]

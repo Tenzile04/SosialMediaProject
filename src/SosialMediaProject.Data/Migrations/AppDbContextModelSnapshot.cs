@@ -248,7 +248,7 @@ namespace SosialMediaProject.Data.Migrations
                     b.Property<DateTime>("DeletedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FormUrl")
+                    b.Property<string>("ImageUrl")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -257,6 +257,10 @@ namespace SosialMediaProject.Data.Migrations
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("VideoUrl")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

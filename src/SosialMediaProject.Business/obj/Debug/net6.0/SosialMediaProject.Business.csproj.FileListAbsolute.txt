@@ -15,12 +15,6 @@ C:\Users\Tenzıle SSD\source\repos\SosialMediaProject\src\SosialMediaProject.Bus
 C:\Users\Tenzıle SSD\source\repos\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\refint\SosialMediaProject.Business.dll
 C:\Users\Tenzıle SSD\source\repos\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.pdb
 C:\Users\Tenzıle SSD\source\repos\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\ref\SosialMediaProject.Business.dll
-C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.csproj.AssemblyReference.cache
-C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.AssemblyInfoInputs.cache
-C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.AssemblyInfo.cs
-C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.csproj.CoreCompileInputs.cache
-C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.sourcelink.json
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\bin\Debug\net6.0\SosialMediaProject.Business.deps.json
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\bin\Debug\net6.0\SosialMediaProject.Business.dll
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\bin\Debug\net6.0\SosialMediaProject.Business.pdb
@@ -28,6 +22,12 @@ C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\bin\Debug\net6.0\SosialMediaProject.Data.dll
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\bin\Debug\net6.0\SosialMediaProject.Data.pdb
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\bin\Debug\net6.0\SosialMediaProject.Core.pdb
+C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.csproj.AssemblyReference.cache
+C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.AssemblyInfoInputs.cache
+C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.AssemblyInfo.cs
+C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.csproj.CoreCompileInputs.cache
+C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.sourcelink.json
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.csproj.CopyComplete
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\SosialMediaProject.Business.dll
 C:\Users\Tenzıle SSD\Desktop\SosialMediaProject\src\SosialMediaProject.Business\obj\Debug\net6.0\refint\SosialMediaProject.Business.dll

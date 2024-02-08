@@ -4,7 +4,9 @@
 }
 <div class="d-flex justify-content-between align-items-center container-fluid">
     <h1>Posts</h1>
-    <a asp-action="create" asp-controller="post" class="btn btn-primary">Create</a>
+
+    <a asp-action="createimage" asp-controller="post" class="btn btn-primary">CreateImage</a>
+    <a asp-action="createvideo" asp-controller="post" class="btn btn-primary">CreateVideo</a>
 </div>
 <div class="container-fluid">
     <table class="table">
@@ -13,8 +15,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Context</th>
                 <th scope="col">Status</th>
-                <th scope="col">FormFile</th>
-               
+                <th scope="col">File</th>
+                
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -28,12 +30,25 @@
                     <td>@item.Context</td>
                     <td>@item.Status</td>
                     <td>
-                        <img style="max-width:100px" src="~/uploads/posts/@item.FormUrl" />
+                        @if(@item.ImageUrl==null){
+
+                             <img style="max-width:100px" src="~/uploads/posts/@item.VideoUrl" />
+                        }
+                        else{
+                            <img style="max-width:100px" src="~/uploads/posts/@item.ImageUrl" />
+                        }
+                        
                     </td>
-                   
+                    
                     <td>
-                        <a asp-action="update" asp-controller="post" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
-                        <a asp-action="delete" asp-controller="post" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                       @*  <a asp-action="update" asp-controller="post" asp-route-id="@item.Id" class="btn btn-warning">Update</a> *@
+                        @if(@item.ImageUrl==null){
+                             <a asp-action="deleteVideo" asp-controller="post" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        }
+                        else{
+                            <a asp-action="deleteImage" asp-controller="post" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        }
+                       
                         <a asp-action="softdelete" asp-controller="post" asp-route-id="@item.Id" class="btn btn-success">SoftDelete</a>
                     </td>
                 </tr>
