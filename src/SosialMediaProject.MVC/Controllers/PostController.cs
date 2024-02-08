@@ -23,6 +23,7 @@ namespace SosialMediaProject.MVC.Controllers
         [HttpGet]
         public IActionResult CreateImage()
         {
+
             return View();
         }
         [Authorize(Roles = "Member")]
@@ -111,70 +112,7 @@ namespace SosialMediaProject.MVC.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
-        //[HttpGet]
-        //public async Task<IActionResult> Update(int id)
-        //{
-        //    if (id == null) return View("error");
-        //    var existPost = await _postService.GetById(x => x.Id == id);
-        //    if (existPost == null) return View("error");
-        //    return View(existPost);
-        //}
-        //[ValidateAntiForgeryToken]
-        //[HttpPost]
-        //public async Task<IActionResult> Update(Post post)
-        //{
-        //    if (!ModelState.IsValid) return View(post);
-        //    try
-        //    {
-        //        await _postService.Update(post);
-        //    }
-        //    catch (InvalidNotFoundException ex)
-        //    {
-        //        return View("error");
-
-        //    }
-        //    catch (InvalidImageContentTypeException ex)
-        //    {
-        //        ModelState.AddModelError(ex.PropertyName, ex.Message);
-        //        return View(post);
-
-        //    }
-        //    catch (InvalidImageSizeException ex)
-        //    {
-        //        ModelState.AddModelError(ex.PropertyName, ex.Message);
-        //        return View(post);
-        //    }
-        //    catch (InvalidImageException ex)
-        //    {
-        //        ModelState.AddModelError(ex.PropertyName, ex.Message);
-        //        return View(post);
-
-        //    }
-        //    catch (InvalidVideoContentTypeException ex)
-        //    {
-        //        ModelState.AddModelError(ex.PropertyName, ex.Message);
-        //        return View(post);
-
-        //    }
-        //    catch (InvalidVideoSizeException ex)
-        //    {
-        //        ModelState.AddModelError(ex.PropertyName, ex.Message);
-        //        return View(post);
-        //    }
-        //    catch (InvalidVideoException ex)
-        //    {
-        //        ModelState.AddModelError(ex.PropertyName, ex.Message);
-        //        return View(post);
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ModelState.AddModelError("", ex.Message);
-        //        return View(post);
-
-        //    }
-        //    return RedirectToAction(nameof(Index));
-        //}
+        
         [Authorize(Roles = "Member")]
         [HttpGet]
         public async Task<IActionResult> DeleteImage(int id)

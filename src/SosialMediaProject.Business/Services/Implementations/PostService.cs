@@ -44,13 +44,14 @@ namespace SosialMediaProject.Business.Services.Implementations
         public async Task CreateImage(Post post)
         {
             if (post is null) throw new InvalidNotFoundException();
-            //AppUser appUser = null;
+            AppUser appUser = null;
 
-            //if (_httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
-            //{
-            //    post.AppUserId = appUser.Id;
+            if (_httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+            {
+                appUser = await _userManager.FindByNameAsync(_httpContextAccessor.HttpContext.User.Identity.Name);
+                post.AppUserId = appUser.Id;
 
-            //}
+            }
 
             if (post.Image != null)
             {
@@ -77,13 +78,14 @@ namespace SosialMediaProject.Business.Services.Implementations
         public async Task CreateVideo(Post post)
         {
             if (post is null) throw new InvalidNotFoundException();
-            //AppUser appUser = null;
+            AppUser appUser = null;
 
-            //if (_httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
-            //{
-            //    post.AppUserId = appUser.Id;
+            if (_httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+            {
+                appUser = await _userManager.FindByNameAsync(_httpContextAccessor.HttpContext.User.Identity.Name);
+                post.AppUserId = appUser.Id;
 
-            //}
+            }
 
             if (post.Video != null)
             {

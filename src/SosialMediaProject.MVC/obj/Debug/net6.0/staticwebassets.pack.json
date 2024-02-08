@@ -8169,6 +8169,18 @@
       "PackagePath": "staticwebassets\\manage\\vendor\\jquery\\jquery.slim.min.map"
     },
     {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\1f223e8c-3fb2-4071-bc45-355b38b617f0poster.jpg",
+      "PackagePath": "staticwebassets\\uploads\\posts\\1f223e8c-3fb2-4071-bc45-355b38b617f0poster.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\85913a9a-e7fb-498b-a470-1849993f6f41video-feed.mp4",
+      "PackagePath": "staticwebassets\\uploads\\posts\\85913a9a-e7fb-498b-a470-1849993f6f41video-feed.mp4"
+    },
+    {
+      "Id": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\f1637c5c-6fea-4175-ad62-2fb049e3cb92poster.jpg",
+      "PackagePath": "staticwebassets\\uploads\\posts\\f1637c5c-6fea-4175-ad62-2fb049e3cb92poster.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.SosialMediaProject.MVC.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
