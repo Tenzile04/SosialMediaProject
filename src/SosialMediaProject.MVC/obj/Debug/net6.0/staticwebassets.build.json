@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JIaxFGlB90YBiBKlbDNB4tNmOtx/ZS+Q7yM65ZcYMnI=",
+  "Hash": "YKKdDmE4ery9P4qLkN5ckWEkmRWH1RJxOUZxtYZOEH8=",
   "Source": "SosialMediaProject.MVC",
   "BasePath": "_content/SosialMediaProject.MVC",
   "Mode": "Default",
@@ -38834,6 +38834,25 @@
       "OriginalItemSpec": "wwwroot\\manage\\vendor\\jquery-easing\\jquery.easing.min.js"
     },
     {
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\0a21d20c-3777-404e-8e50-db4170bd8b9dvideo-feed.mp4",
+      "SourceId": "SosialMediaProject.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\",
+      "BasePath": "_content/SosialMediaProject.MVC",
+      "RelativePath": "uploads/posts/0a21d20c-3777-404e-8e50-db4170bd8b9dvideo-feed.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\posts\\0a21d20c-3777-404e-8e50-db4170bd8b9dvideo-feed.mp4"
+    },
+    {
       "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\1f223e8c-3fb2-4071-bc45-355b38b617f0poster.jpg",
       "SourceId": "SosialMediaProject.MVC",
       "SourceType": "Discovered",
@@ -38851,6 +38870,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\posts\\1f223e8c-3fb2-4071-bc45-355b38b617f0poster.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\20a23448-8a3f-4992-8be4-d1aa955300de01.jpg",
+      "SourceId": "SosialMediaProject.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\",
+      "BasePath": "_content/SosialMediaProject.MVC",
+      "RelativePath": "uploads/posts/20a23448-8a3f-4992-8be4-d1aa955300de01.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\posts\\20a23448-8a3f-4992-8be4-d1aa955300de01.jpg"
     },
     {
       "Identity": "C:\\Users\\Tenzıle SSD\\Desktop\\SosialMediaProject\\src\\SosialMediaProject.MVC\\wwwroot\\uploads\\posts\\85913a9a-e7fb-498b-a470-1849993f6f41video-feed.mp4",

@@ -94,6 +94,7 @@ namespace SosialMediaProject.MVC.Controllers
 			if (HttpContext.User.Identity.IsAuthenticated)
 			{
 				appUser = await _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+                
 			}
          
 
