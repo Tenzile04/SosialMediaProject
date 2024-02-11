@@ -20,11 +20,36 @@ namespace SosialMediaProject.Business.Hubs
             _userManager = userManager;
         }
 
-        //public async Task SendMessage(string user, string message)
-        //{
-        //    await Clients.All.SendAsync("ReceiveMessage", user, message);
-        //}
-        public async Task SendMessage(string toUserId, string message)
+		//public async Task SendMessage(string user, string message)
+		//{
+		//    await Clients.All.SendAsync("ReceiveMessage", user, message);
+		//}
+		//public async Task SendMessage(string toUserId, string message)
+		//{
+		//	if (Context.User.Identity.IsAuthenticated)
+		//	{
+		//		var fromUser = await _userManager.FindByNameAsync(Context.User.Identity.Name);
+
+		//		if (fromUser != null)
+		//		{
+		//			await Clients.Client(fromUser.ConnectionId).SendAsync("SendMessage", fromUser.Id, fromUser.FullName, message);
+		//		}
+		//	}
+
+		//}
+		//public async Task RecieveMessage(string toUserId, string message)
+		//{
+		//	if (Context.User.Identity.IsAuthenticated)
+		//	{
+		//		var fromUser = await _userManager.FindByNameAsync(Context.User.Identity.Name);
+
+		//		if (fromUser != null)
+		//		{
+		//			await Clients.Client(fromUser.ConnectionId).SendAsync("RecieveMessage", fromUser.Id, fromUser.FullName, message);
+		//		}
+		//	}
+		//}
+		public async Task SendMessage(string toUserId, string message)
         {
             if (Context.User.Identity.IsAuthenticated)
             {

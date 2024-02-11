@@ -33,7 +33,6 @@ namespace SosialMediaProject.Core.Models
 		//public DateTime LastLoginDate { get; set; }
 		public List<Post>? Post {  get; set; }
 		public string? ConnectionId { get; set; }
-		
 
 	}
 }

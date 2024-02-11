@@ -8,5 +8,6 @@ namespace SosialMediaProject.MVC.ViewModels
 	{
 		
 		public List<Post> Posts { get; set; }
+		public List<AppUser> AppUsers { get; set; }
 	}
 }

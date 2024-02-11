@@ -152,7 +152,7 @@
 												@foreach (var item in Model)
 												{
 													<li data-bs-dismiss="offcanvas">
-														<a href="#chat-2" class="nav-link text-start" id="chat-2-tab" data-bs-toggle="pill" role="tab">
+														<a href="#chat-@item.Id" class="nav-link text-start" id="chat-@item.Id-tab" data-bs-toggle="pill" role="tab">
 															<div class="d-flex">
 																<div id="@item.Id" class="flex-shrink-0 avatar me-2 status-@(item.ConnectionId != null ? "online" : "offline")">
 																	@if (item.PhotoUrl == null)
@@ -166,7 +166,7 @@
 
 																</div>
 																<div class="flex-grow-1 d-block">
-																	<h6 class="fullname mb-0 mt-1">@item.FullName</h6>
+																	<h6 data-id="@item.Id" class="fullname mb-0 mt-1 ">@item.FullName</h6>
 
 																</div>
 															</div>
@@ -195,7 +195,7 @@
 								<!-- Conversation item START -->
 								@foreach (var item in Model)
 								{
-									<div class="fade tab-pane h-100" id="chat-2" role="tabpanel" aria-labelledby="chat-2-tab">
+									<div class="fade tab-pane h-100" id="chat-@item.Id" role="tabpanel" aria-labelledby="chat-2-tab">
 										<!-- Top avatar and status START -->
 										<div class="d-sm-flex justify-content-between align-items-center">
 											<div class="d-flex mb-2 mb-sm-0">
@@ -352,22 +352,34 @@
 	@section Scripts{
 		<script>
 			
-			fetch('/getUsers')
-				.then(response => response.json())
-				.then(users => {
-					
-					users.forEach(function (user) {
-						var usernameElement = document.getElementById(userId);
-						usernameElement.onclick = function () {
+			const fullnames = document.querySelectorAll(".fullname");
 
-							let fullnames = document.querySelectorAll(".fullname");
-							fullnames.forEach(fullname => {
-								fullname.getAttribute(userId)
-							})
-						};
-					});
-				});
+			fullnames.forEach(name =>{
+				name.addEventListener("click",function(e) {
+					e.preventDefault();
+					const id = fullname.getAttribute("data-id");
+					console.log(id);
+				})
+			})
 
+			// document.getElementById("sendButton").addEventListener("click", function () {
+			// 	const userValue = document.getElementById("userInput").value;
+			// 	const messageValue = document.getElementById("messageInput").value;
+
+			// 	connection.invoke("SendMessage", userValue, messageValue);
+			// })
+
+
+			// connection.on("ReceiveMessage", function (user, message) {
+			// 	const li = document.createElement("li");
+			// 	li.innerText = user + ": " + message;
+			// 	document.getElementById("messagesList").append(li);
+			// })
+			// connection.on("SendMessage", function (user, message) {
+			// 	const li = document.createElement("li");
+			// 	li.innerText = user + ": " + message;
+			// 	document.getElementById("messagesList").append(li);
+			// })
 
 			connection.on("OnConnect", function (userId) {
 				document.getElementById(userId).classList.remove("bg-danger");

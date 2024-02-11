@@ -7,6 +7,7 @@ using SosialMediaProject.Business.Services.Interfaces;
 using SosialMediaProject.Business.ViewModels;
 using SosialMediaProject.Core.Models;
 using SosialMediaProject.Data.DataAccessLayer;
+using SosialMediaProject.MVC.ViewModels;
 using System.Security.Authentication;
 
 namespace SosialMediaProject.MVC.Controllers
@@ -96,11 +97,19 @@ namespace SosialMediaProject.MVC.Controllers
 				appUser = await _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
                 
 			}
-         
+            List<Post> posts = await _context.Posts.Where(x => x.AppUserId == appUser.Id).ToListAsync();
+            ProfileViewModel profileViewModel = new ProfileViewModel()
+            {
 
-            return View(appUser);
+                Posts = _context.Posts.Include(x=>x.AppUser).ToList()
 
-			
-		}
+            };
+            return View(profileViewModel);
+           
+
+           
+        }
+           		
+		
 	}
 }
