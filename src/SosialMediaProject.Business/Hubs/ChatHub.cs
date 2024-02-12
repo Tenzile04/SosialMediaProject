@@ -13,66 +13,19 @@ namespace SosialMediaProject.Business.Hubs
 {
     public class ChatHub : Hub
     {
-        private readonly UserManager<AppUser> _userManager;     
+        private readonly UserManager<AppUser> _userManager;
 
         public ChatHub(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
         }
 
-		//public async Task SendMessage(string user, string message)
-		//{
-		//    await Clients.All.SendAsync("ReceiveMessage", user, message);
-		//}
-		//public async Task SendMessage(string toUserId, string message)
-		//{
-		//	if (Context.User.Identity.IsAuthenticated)
-		//	{
-		//		var fromUser = await _userManager.FindByNameAsync(Context.User.Identity.Name);
-
-		//		if (fromUser != null)
-		//		{
-		//			await Clients.Client(fromUser.ConnectionId).SendAsync("SendMessage", fromUser.Id, fromUser.FullName, message);
-		//		}
-		//	}
-
-		//}
-		//public async Task RecieveMessage(string toUserId, string message)
-		//{
-		//	if (Context.User.Identity.IsAuthenticated)
-		//	{
-		//		var fromUser = await _userManager.FindByNameAsync(Context.User.Identity.Name);
-
-		//		if (fromUser != null)
-		//		{
-		//			await Clients.Client(fromUser.ConnectionId).SendAsync("RecieveMessage", fromUser.Id, fromUser.FullName, message);
-		//		}
-		//	}
-		//}
-		public async Task SendMessage(string toUserId, string message)
+        public async Task SendMessage(string user, string message)
         {
-            if (Context.User.Identity.IsAuthenticated)
-            {
-                var fromUser = await _userManager.FindByNameAsync(Context.User.Identity.Name);
-
-                if (fromUser != null)
-                {
-                    AppUser toUser = _userManager.FindByIdAsync(toUserId).Result;
-
-					if (toUser != null)
-					{
-						if (toUser.ConnectionId != null && fromUser.ConnectionId != null)
-						{
-							await Clients.Client(toUser.ConnectionId).SendAsync("RecieveMessagePrivate", fromUser.Id, fromUser.FullName, message);
-							await Clients.Client(fromUser.ConnectionId).SendAsync("SendMessagePrivate", toUser.Id, toUser.FullName, message);
-						}
-					}				
-                   
-                }
-            }
-               
+            await Clients.All.SendAsync("ReceiveMessage", user, message);
         }
-	
+
+
 
 		public override async Task OnConnectedAsync()
         {

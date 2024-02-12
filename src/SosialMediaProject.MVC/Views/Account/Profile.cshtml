@@ -115,7 +115,14 @@
                 <div>
                   <!-- Avatar -->
                   <div class="avatar avatar-xxl mt-n5 mb-3">
-                    <img class="avatar-img rounded-circle border border-white border-3" src="~/assets/images/avatar/07.jpg" alt="">
+                                        @if (@Model.AppUsers.FirstOrDefault(x => x.Status == true).PhotoUrl == null)
+                                        {
+                                            <img class="avatar-img rounded-circle border border-white border-3" src="https://i.insider.com/589a002a6e09a824008b5c31?width=600&format=jpeg&auto=webp" />
+                                        }
+                                        else
+                                        {
+                                            <img class="avatar-img rounded-circle border border-white border-3" src="~/uploads/appusers/@Model.AppUsers.FirstOrDefault(x=>x.Status==true).PhotoUrl" alt="">
+                                        }
                   </div>
                 </div>
                 <div class="ms-sm-4 mt-sm-3">
@@ -212,7 +219,16 @@
                                     <div class="d-flex align-items-center">
                                         <!-- Avatar -->
                                         <div class="avatar avatar-story me-2">
-                                            <a href="#!"> <img class="avatar-img rounded-circle" src="~/assets/images/avatar/04.jpg" alt=""> </a>
+                                            <a href="#!">
+                                                @if (@Model.AppUsers.FirstOrDefault(x => x.Status == true).PhotoUrl == null)
+                                                {
+                                                    <img class="avatar-img rounded-circle" src="https://i.insider.com/589a002a6e09a824008b5c31?width=600&format=jpeg&auto=webp" />
+                                                }
+                                                else
+                                                {
+                                                    <img class="avatar-img rounded-circle" src="~/uploads/appusers/@Model.AppUsers.FirstOrDefault(x=>x.Status==true).PhotoUrl" alt="">
+                                                }
+                                            </a>
                                         </div>
                                         <!-- Info -->
                                         <div>

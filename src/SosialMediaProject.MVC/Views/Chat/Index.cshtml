@@ -145,6 +145,7 @@
 										</button>
 									</form>
 									<!-- Search chat END -->
+									
 									<!-- Chat list tab START -->
 									<div class="mt-4 h-100">
 										<div class="chat-tab-list custom-scrollbar">
@@ -167,6 +168,7 @@
 																</div>
 																<div class="flex-grow-1 d-block">
 																	<h6 data-id="@item.Id" class="fullname mb-0 mt-1 ">@item.FullName</h6>
+																	<a class="w-25 text-white private-message btn btn-primary" asp-action="privateChat" asp-controller="chat" asp-route-userId="@item.Id"></a>
 
 																</div>
 															</div>
@@ -248,26 +250,24 @@
 												</div>
 												<div class="flex-grow-1">
 													<div class="w-100">
-														<div class="d-flex flex-column align-items-start">
-															<div class="bg-light text-secondary p-2 px-3 rounded-2">Night signs creeping yielding green Seasons.</div>
-															<div class="small my-2">6:15 AM</div>
+														<div class=" p-1">
+															<div>Private Message</div>
+															<div><input type="text" class="w-100" id="privateMessageInput" /></div>
+														</div>
+														<div class=" p-1">
+															<div>
+																<input type="button" id="PrivateSendButton" value="Send Message" />
+															</div>
+														</div>
+														<div class=" p-1">
+															<div>
+																<ul id="privateMessagesList"></ul>
+															</div>
 														</div>
 													</div>
 												</div>
 											</div>
-											<!-- Chat message right -->
-											<div class="d-flex justify-content-end text-end mb-1">
-												<div class="w-100">
-													<div class="d-flex flex-column align-items-end">
-														<div class="bg-primary text-white p-2 px-3 rounded-2">Creeping earth under was You're without which image.</div>
-														<div class="d-flex my-2">
-															<div class="small text-secondary">6:20 AM</div>
-															<div class="small ms-2"><i class="fa-solid fa-check-double text-info"></i></div>
-														</div>
-													</div>
-												</div>
-											</div>
-
+										
 											
 										
 											
@@ -292,8 +292,6 @@
 				</div>
 
 
-
-
 				<!-- Chat conversation END -->
 			</div> <!-- Row END -->
 			<!-- =======================
@@ -304,42 +302,7 @@
 
 	</main>
 	<!-- **************** MAIN CONTENT END **************** -->
-	<!-- Chat START -->
-	@* <div class="position-fixed bottom-0 end-0 p-3">
 
-		<!-- Chat toast START -->
-		<div id="chatToast" class="toast bg-mode" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-			<div class="toast-header bg-mode d-flex justify-content-between">
-				<!-- Title -->
-				<h6 class="mb-0">New message</h6>
-				<button class="btn btn-secondary-soft-hover py-1 px-2" data-bs-dismiss="toast" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-			</div>
-			<!-- Top avatar and status END -->
-			<div class="toast-body collapse show" id="collapseChat">
-				<!-- Chat conversation START -->
-				<!-- Form -->
-				<form>
-					<div class="input-group mb-3">
-						<span class="input-group-text border-0">To</span>
-						<input class="form-control" type="text" placeholder="Type a name or multiple names">
-					</div>
-				</form>
-				<!-- Chat conversation END -->
-				<!-- Extra space -->
-				<div class="h-200px"></div>
-				<!-- Button  -->
-				<div class="d-sm-flex align-items-end">
-					<textarea class="form-control mb-sm-0 mb-3" placeholder="Type a message" rows="1" spellcheck="false"></textarea>
-					<button class="btn btn-sm btn-danger-soft ms-sm-2"><i class="fa-solid fa-face-smile fs-6"></i></button>
-					<button class="btn btn-sm btn-secondary-soft ms-2"><i class="fa-solid fa-paperclip fs-6"></i></button>
-					<button class="btn btn-sm btn-primary ms-2"><i class="fa-solid fa-paper-plane fs-6"></i></button>
-				</div>
-			</div>
-		</div>
-		<!-- Chat toast END -->
-
-	</div> *@
-	<!-- Chat END -->
 
 	<!-- Bootstrap JS -->
 	<script src="~/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -352,34 +315,27 @@
 	@section Scripts{
 		<script>
 			
-			const fullnames = document.querySelectorAll(".fullname");
+			
 
-			fullnames.forEach(name =>{
-				name.addEventListener("click",function(e) {
-					e.preventDefault();
-					const id = fullname.getAttribute("data-id");
-					console.log(id);
-				})
+			document.getElementById("sendButton").addEventListener("click", function () {
+				const userValue = document.getElementById("userInput").value;
+				const messageValue = document.getElementById("messageInput").value;
+
+				connection.invoke("SendMessage", userValue, messageValue);
 			})
 
-			// document.getElementById("sendButton").addEventListener("click", function () {
-			// 	const userValue = document.getElementById("userInput").value;
-			// 	const messageValue = document.getElementById("messageInput").value;
 
-			// 	connection.invoke("SendMessage", userValue, messageValue);
-			// })
+			connection.on("ReceiveMessage", function (user, message) {
+				const li = document.createElement("li");
+				li.innerText = user + ": " + message;
+				document.getElementById("messagesList").append(li);
+			})
 
-
-			// connection.on("ReceiveMessage", function (user, message) {
-			// 	const li = document.createElement("li");
-			// 	li.innerText = user + ": " + message;
-			// 	document.getElementById("messagesList").append(li);
-			// })
-			// connection.on("SendMessage", function (user, message) {
-			// 	const li = document.createElement("li");
-			// 	li.innerText = user + ": " + message;
-			// 	document.getElementById("messagesList").append(li);
-			// })
+			connection.on("SendMessage", function (user, message) {
+				const li = document.createElement("li");
+				li.innerText = user + ": " + message;
+				document.getElementById("messagesList").append(li);
+			})
 
 			connection.on("OnConnect", function (userId) {
 				document.getElementById(userId).classList.remove("bg-danger");
@@ -391,7 +347,24 @@
 				document.getElementById(userId).classList.remove("bg-success");
 				document.getElementById(userId).classList.add("bg-danger");
 			})
+			document.querySelectorAll(".private-message").forEach(btn => {
+				btn.addEventListener("click", function (e) {
+					e.preventDefault();
+					document.getElementById("PrivateSendButton").addEventListener("click", function () {
+						const privateInputValue = document.getElementById("privateMessageInput");
+						const url = btn.getAttribute("href") + "&message=" + privateInputValue.value;
+						console.log(url);
+						fetch(url)
+							.then(response => console.log(response.status))
+					})
+				})
+			})
 
+			connection.on("SendMessagePrivate", function (message) {
+				const li = document.createElement("li");
+				li.innerText = message;
+				document.getElementById("privateMessagesList").appendChild(li);
+			})
 		</script>
 
 	}
