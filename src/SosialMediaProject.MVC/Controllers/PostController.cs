@@ -14,8 +14,8 @@ namespace SosialMediaProject.MVC.Controllers
         {
             _postService = postService;
         }
-        [Authorize]
-        public async Task<IActionResult> Index()
+		[Authorize(Roles = "SuperAdmin")]
+		public async Task<IActionResult> Index()
         {
             return View(await _postService.GetAll());
         }
@@ -64,7 +64,7 @@ namespace SosialMediaProject.MVC.Controllers
                 return View(post);
 
             }
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("index", "home");
         }
         [Authorize(Roles = "Member")]
         [HttpGet]
@@ -110,8 +110,8 @@ namespace SosialMediaProject.MVC.Controllers
                 return View(post);
 
             }
-            return RedirectToAction(nameof(Index));
-        }
+			return RedirectToAction("index", "home");
+		}
         
         [Authorize(Roles = "Member")]
         [HttpGet]
@@ -143,8 +143,8 @@ namespace SosialMediaProject.MVC.Controllers
                 return View(post);
 
             }
-            return RedirectToAction(nameof(Index));
-        }
+			return RedirectToAction("index", "home");
+		}
         [Authorize(Roles = "Member")]
 		[HttpGet]
 		public async Task<IActionResult> DeleteVideo(int id)
@@ -175,8 +175,8 @@ namespace SosialMediaProject.MVC.Controllers
                 return View(post);
 
             }
-            return RedirectToAction(nameof(Index));
-        }
+			return RedirectToAction("index", "home");
+		}
        
         [Authorize(Roles ="SuperAdmin")]
         [HttpGet]
