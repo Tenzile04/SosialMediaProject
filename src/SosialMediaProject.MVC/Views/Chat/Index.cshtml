@@ -93,7 +93,6 @@
 
 	<!-- =======================
 	Header START -->
-	
 	<!-- =======================
 	Header END -->
 	<!-- **************** MAIN CONTENT START **************** -->
@@ -168,7 +167,6 @@
 																</div>
 																<div class="flex-grow-1 d-block">
 																	<h6 data-id="@item.Id" class="fullname mb-0 mt-1 ">@item.FullName</h6>
-																	<a class="w-25 text-white private-message btn btn-primary" asp-action="privateChat" asp-controller="chat" asp-route-userId="@item.Id"></a>
 
 																</div>
 															</div>
@@ -217,11 +215,11 @@
 													<h6 id="@item.Id" class=" mb-0 mt-1">@item.FullName</h6>
 
 													<div class="small text-secondary"><i class="fa-solid fa-circle text-@(item.ConnectionId !=null ? "success" : "danger" ) me-1"></i>@(item.ConnectionId != null ? "Online" : "OffLine")</div>
-													
+
 												</div>
 											</div>
 											<div class="d-flex align-items-center">
-												
+
 												<!-- Card action START -->
 												<div class="dropdown">
 													<a class="icon-md rounded-circle btn btn-primary-soft me-2 px-2" href="#" id="chatcoversationDropdown2" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="bi bi-three-dots-vertical"></i></a>
@@ -242,54 +240,70 @@
 										<!-- Chat conversation START -->
 										<div class="chat-conversation-content overflow-auto custom-scrollbar">
 											<!-- Chat time -->
-											<div class="text-center small my-2">Jul 16, 2022, 06:15 am</div>
+											<div class="text-center small my-2">Jul 16, 2022, 06:15 am</div> 
 											<!-- Chat message left -->
 											<div class="d-flex mb-1">
-												<div class="flex-shrink-0 avatar avatar-xs me-2">
-													<img class="avatar-img rounded-circle" src="~/assets/images/avatar/11.jpg" alt="">
-												</div>
-												<div class="flex-grow-1">
-													<div class="w-100">
-														<div class=" p-1">
-															<div>Private Message</div>
-															<div><input type="text" class="w-100" id="privateMessageInput" /></div>
-														</div>
-														<div class=" p-1">
-															<div>
-																<input type="button" id="PrivateSendButton" value="Send Message" />
-															</div>
-														</div>
-														<div class=" p-1">
-															<div>
-																<ul id="privateMessagesList"></ul>
-															</div>
-														</div>
-													</div>
+										<div class="flex-shrink-0 avatar avatar-xs me-2">
+										<img class="avatar-img rounded-circle" src="~/assets/images/avatar/11.jpg" alt="">
+										</div>
+										<div class="flex-grow-1">
+										<div class="w-100">
+										<div class="d-flex flex-column align-items-start">
+										<div class="bg-light text-secondary p-2 px-3 rounded-2">Night signs creeping yielding green Seasons.</div>
+										<div class="small my-2">6:15 AM</div>
+										</div>
+										</div>
+										</div>
+										</div>
+										<!-- Chat message right -->
+										<div class="d-flex justify-content-end text-end mb-1">
+										<div class="w-100">
+										<div class="d-flex flex-column align-items-end">
+										<div class="bg-primary text-white p-2 px-3 rounded-2">Creeping earth under was You're without which image.</div>
+										<div class="d-flex my-2">
+										<div class="small text-secondary">6:20 AM</div>
+										<div class="small ms-2"><i class="fa-solid fa-check-double text-info"></i></div>
+										</div>
+										</div>
+										</div>
+										</div>
+											@* <div class=" p-1">
+												<div>Message</div>
+												<div><input type="text" class="w-100" id="privateMessageInput" /></div>
+											</div>
+											<div class=" p-1">
+												<div>
+													<input type="button" id="privateSendButton" value="Send Message" />
 												</div>
 											</div>
-										
-											
-										
-											
+											<div class=" p-1">
+												<div>
+													<ul id="privateMessagesList"></ul>
+												</div>
+											</div> *@
+
+
 										</div>
 										<!-- Chat conversation END -->
 									</div>
 								}
 
-							
-							
+
+
 							</div>
 
 						</div>
 						<div class="card-footer">
 							<div class="d-sm-flex align-items-end">
 								<textarea class="form-control mb-sm-0 mb-3" data-autoresize placeholder="Type a message" rows="1"></textarea>
-								
+
 								<button class="btn btn-sm btn-primary ms-2"><i class="fa-solid fa-paper-plane fs-6"></i></button>
 							</div>
 						</div>
 					</div>
 				</div>
+
+
 
 
 				<!-- Chat conversation END -->
@@ -302,8 +316,7 @@
 
 	</main>
 	<!-- **************** MAIN CONTENT END **************** -->
-
-
+	<!-- Chat END -->
 	<!-- Bootstrap JS -->
 	<script src="~/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -312,10 +325,55 @@
 
 	<!-- Theme Functions -->
 	<script src="~/assets/js/functions.js"></script>
-	@section Scripts{
+	@section Scripts {
 		<script>
+			const fullnames = document.querySelectorAll(".fullname");
+
+			fullnames.forEach(name => {
+				name.addEventListener("click", function (e) {
+					e.preventDefault();
+					const id = fullname.getAttribute("data-id");
+					console.log(id);
+				})
+			})
+
+			// const fullnames = document.querySelectorAll(".fullname");
+
+			// fullnames.forEach(name => {
+			// 	name.addEventListener("click", function (e) {
+			// 		e.preventDefault();
+			// 		document.getElementById("privateSendButton").addEventListener("click", function () {
+			// 			const privateInputValue = document.getElementById("privateMessageInput");
+			// 			const url = name.getAttribute("data-id") + "&message" + privateInputValue.value;
+			// 			fetch(url)
+			// 				.then(response => console.log(response.status));
+			// 			console.log(url);
+			// 		})
+			// 	})
+			// })
+			// document.querySelectorAll(".private-message").forEach(name => {
+			// 	name.addEventListener("click", function (e) {
+			// 		e.preventDefault();
+			// 		document.getElementById("privateSendButton").addEventListener("click", function () {
+			// 			const privateInputValue = document.getElementById("privateMessageInput");
+
+			// 			const url = name.getAttribute("href") + "&message" + privateInputValue.value;
+
+			// 			fetch(url)
+			// 				.then(response => console.log(response.status));
+			// 		})
+			// 	})
+			// })
+
+			connection.on("SendMessagePrivate", function (message) {
+				// alert(message);
+				const li = document.createElement("li");
+				li.innerText = message;
+				document.getElementById("privateMessagesList").appendChild(li);
+			})
+
 			
-			
+
 
 			document.getElementById("sendButton").addEventListener("click", function () {
 				const userValue = document.getElementById("userInput").value;
@@ -347,24 +405,7 @@
 				document.getElementById(userId).classList.remove("bg-success");
 				document.getElementById(userId).classList.add("bg-danger");
 			})
-			document.querySelectorAll(".private-message").forEach(btn => {
-				btn.addEventListener("click", function (e) {
-					e.preventDefault();
-					document.getElementById("PrivateSendButton").addEventListener("click", function () {
-						const privateInputValue = document.getElementById("privateMessageInput");
-						const url = btn.getAttribute("href") + "&message=" + privateInputValue.value;
-						console.log(url);
-						fetch(url)
-							.then(response => console.log(response.status))
-					})
-				})
-			})
 
-			connection.on("SendMessagePrivate", function (message) {
-				const li = document.createElement("li");
-				li.innerText = message;
-				document.getElementById("privateMessagesList").appendChild(li);
-			})
 		</script>
 
 	}
